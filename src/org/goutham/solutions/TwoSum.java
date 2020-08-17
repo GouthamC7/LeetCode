@@ -47,10 +47,22 @@ public class TwoSum {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] result = twoSum(new int[] {1,2,3,6},7);
-		System.out.print(hammingWeight(00000000000000000000000000001011));
+		System.out.print(countPrimes(499979));
 
 
 	}
+	
+	public static int countPrimes(int n) {
+		boolean[] a = new boolean[n];
+	    int result = 0;
+	    for (int i = 2; i < n; i++)
+	        if (!a[i]) {
+	            for (int j = 2 * i; j < n; j += i)
+	                a[j] = true;
+	            result++;
+	        }
+	    return result;
+    }
 	
 	public static int reverse(int x) {
         int result = 0;	
